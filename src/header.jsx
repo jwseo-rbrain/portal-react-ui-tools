@@ -8,9 +8,11 @@ import {
   MenuItem,
   Chip,
   Box,
+  ClickAwayListener,
 } from "@mui/material";
+
 import { SmartToy, AccountCircle } from "@mui/icons-material";
-function App(props) {
+const Header = (props) => {
   const [profile, setProfile] = useState(null);
   const onProfileOpen = (event) => {
     setProfile(event.currentTarget);
@@ -49,11 +51,13 @@ function App(props) {
                 horizontal: "right",
               }}
               open={Boolean(profile)}
+              onBlur={onProfileClose}
             >
               <MenuItem onClick={onProfileClose}>Profile</MenuItem>
               <MenuItem onClick={onProfileClose}>My account</MenuItem>
             </Menu>
           </Box>
+
           {/* 로그아웃 */}
           <Box ml={2}>
             <Button variant="outlined">로그아웃</Button>
@@ -62,6 +66,6 @@ function App(props) {
       </AppBar>
     </React.Fragment>
   );
-}
+};
 
-export default App;
+export default Header;

@@ -8,7 +8,7 @@ import {
 import { Send, ExpandLess, ExpandMore } from "@mui/icons-material";
 import React from "react";
 
-function App(props) {
+function SideBar(props) {
   const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
@@ -22,6 +22,7 @@ function App(props) {
           maxWidth: "250px",
           backgroundColor: "#0067ac",
           color: "#ffffff",
+          height: "97vh",
         }}
         component="nav"
       >
@@ -56,4 +57,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default SideBar;
